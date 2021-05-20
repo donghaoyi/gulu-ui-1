@@ -3,15 +3,15 @@ import App from './App.vue'
 import './index.css'
 import {createWebHashHistory,createRouter} from 'vue-router'
 
-import HelloWorld from './components/HelloWorld.vue'
-import HelloWorld2 from './components/HelloWorld2.vue'
+import Home from './views/Home.vue'
+import Doc from './views/Doc.vue'
 
 const history = createWebHashHistory();
 const router = createRouter({
     history:history,
     routes:[
-        {path:'/',component:HelloWorld},
-        {path:'/xxx',component:HelloWorld2}
+        {path:'/',component:Home},
+        {path:'/doc',component:Doc}
     ]
 })
 // 使用router
