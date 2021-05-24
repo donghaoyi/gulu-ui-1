@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <router-link to="/" class="logo">LOGO</router-link>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
