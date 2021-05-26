@@ -20,7 +20,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.gulu-switch {
   height: $h;
   width: $h * 2;
   border: none;
