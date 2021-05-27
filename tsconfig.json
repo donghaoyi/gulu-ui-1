@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        // "module": "commonjs",
+        // "target": "es6",
+        // "noImplicitAny": false,
+        // "sourceMap": true,
+        "allowJs": false,
+        // "allowSyntheticDefaultImports": true,
+        // "noEmitOnError": true,
+        // "removeComments": false,
+        "noEmit": true // Do not compile the JS (or TS) files in this project on build    
+    },
+    "include": [ "test.ts" ],
+    // "include": ["src/**/*"],
+    "exclude": [
+        "src",
+        "wwwroot",
+        "node_modules"
+    ],
+    "compileOnSave": false
+    }
