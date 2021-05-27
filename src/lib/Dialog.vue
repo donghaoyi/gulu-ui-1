@@ -4,16 +4,15 @@
     <div class="gulu-dialog-wrapper">
       <div class="gulu-dialog">
         <header>
-          标题
+          {{ title }}
           <span class="gulu-dialog-close" @click="close"></span>
         </header>
         <main>
-          <p>第一行</p>
-          <p>第二行</p>
+          <slot />
         </main>
         <footer>
-          <Button>Ok</Button>
-          <Button>Cancal</Button>
+          <Button @click="ok">Ok</Button>
+          <Button @click="cancal">Cancal</Button>
         </footer>
       </div>
     </div>
@@ -26,6 +25,10 @@ export default {
     Button,
   },
   props: {
+    title: {
+      type: String,
+      defaule: "提示",
+    },
     visible: {
       type: Boolean,
       defaule: false,
@@ -37,9 +40,11 @@ export default {
     },
     ok: {
       type: Function,
+      default:function(){}
     },
     cancal: {
       type: Function,
+      default:function(){}
     },
   },
   setup(props, context) {
@@ -53,16 +58,20 @@ export default {
     };
     const ok = () => {
       if (props.ok?.() !== false) {
+        console.log("传递了ok false");
         close();
       }
     };
-    const cancel = () => {
+    const cancal = () => {
+      console.log("直接关闭");
       context.emit("cancel");
       close();
     };
     return {
       close,
       onClickOverlay,
+      ok,
+      cancal,
     };
   },
 };

@@ -2,7 +2,10 @@
     <div>示例</div>
     <h1>示例1</h1>
     <Button @click="toggle">打开Dialog</Button>
-    <Dialog v-model:visible="x" :closeOnClickOverlay="true" :ok="ok" :cancal="cancal"></Dialog>
+    <Dialog v-model:visible="x" title="标题" :closeOnClickOverlay="true" :ok="ok" :cancal="cancal">
+        <div>内容1</div>
+        <div>内容1</div>
+    </Dialog>
 </template>
 <script lang="ts">
 import { ref } from 'vue'
