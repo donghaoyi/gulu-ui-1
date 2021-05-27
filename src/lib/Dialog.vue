@@ -42,11 +42,9 @@ export default {
     },
     ok: {
       type: Function,
-      default: function () {},
     },
     cancal: {
       type: Function,
-      default: function () {},
     },
   },
   setup(props, context) {
@@ -60,13 +58,14 @@ export default {
     };
     const ok = () => {
       if (props.ok?.() !== false) {
-        console.log("传递了ok false");
+        console.log('触发ok事件');
+        
         close();
       }
     };
     const cancal = () => {
-      console.log("直接关闭");
-      context.emit("cancel");
+      props.cancal?.()
+      console.log('触发cancal事件');
       close();
     };
     return {
