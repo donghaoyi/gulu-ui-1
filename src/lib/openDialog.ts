@@ -14,9 +14,8 @@ export const openDialog = (options) => {
                             app.unmount()
                             dialogDiv.remove();
                         }
-                    },ok,cancal
+                    }, ok, cancal
                 }, { title, content })
-
         }
     });
     app.mount(dialogDiv)
