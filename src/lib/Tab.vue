@@ -1,6 +1,6 @@
 <template>
     <div>
-        tab view
+        <slot />
     </div>
 </template>
 <script lang='ts'>
