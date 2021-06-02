@@ -67,10 +67,6 @@ export default {
         const {
           left: selectedItem_left,
         } = selectedItem.value.getBoundingClientRect();
-        console.log('container_left:',container_left);
-        console.log('selectedItem_left:',selectedItem_left);
-        console.log('selectedItem:',{...selectedItem.value});
-        console.log('selectedItem:',selectedItem.value);
         const result_left = selectedItem_left - container_left;
         indicator.value.style.left = result_left + "px";
       });

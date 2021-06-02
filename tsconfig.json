@@ -10,7 +10,7 @@
         // "removeComments": false,
         "noEmit": true // Do not compile the JS (or TS) files in this project on build    
     },
-    "include": [ "./test.ts" ],
+    // "include": [ "./test.ts" ],
     // "include": ["src/**/*"],
     "exclude": [
         "src",
