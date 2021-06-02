@@ -2,7 +2,7 @@
   <div>TabsDemo 文档页</div>
   <Tabs v-model:selected="active_title">
     <Tab title="导航1">内容1</Tab>
-    <Tab title="导航2">内容2</Tab>
+    <Tab title="导航2222">内容2</Tab>
   </Tabs>
 </template>
 <script lang="ts">
@@ -15,7 +15,7 @@ export default {
     Tabs,
   },
   setup(props) {
-    const active_title = ref("导航1");
+    const active_title = ref("导航2222");
     return {
       active_title,
     };
