@@ -9,8 +9,8 @@
         @click="select(title_item)"
         :ref="
           (el) => {
-            if (el) {
-              navItems[title_index] = el;
+            if (title_item === selected) {
+              selectedItem = el;
             }
           }
         "
@@ -25,7 +25,7 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
@@ -51,35 +51,38 @@ export default {
     });
     const select = (title: string) => {
       context.emit("update:selected", title);
+      console.log(title);
     };
 
-    const navItems = ref<HTMLDivElement[]>([]);
+    const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    const x = ()=>{
-      const divs = navItems.value;
-      const result = divs.filter((tag) =>
-        tag.classList.contains("selected")
-      )[0];
-      const { width } = result.getBoundingClientRect();
-      indicator.value.style.width = width + "px";
-
-      const {left:container_left} = container.value.getBoundingClientRect();
-      const {left:result_left} = result.getBoundingClientRect();
-      console.log('container_left:',container_left,'result_left:',result_left);
-      const left = result_left - container_left + 'px';
-      indicator.value.style.left = left;
-    }
-    onMounted(x);
-    onUpdated(x)
+    onMounted(() => {
+      watchEffect(() => {
+        const { width:selectedItem_width } = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = selectedItem_width + "px";
+        const {
+          left: container_left,
+        } = container.value.getBoundingClientRect();
+        const {
+          left: selectedItem_left,
+        } = selectedItem.value.getBoundingClientRect();
+        console.log('container_left:',container_left);
+        console.log('selectedItem_left:',selectedItem_left);
+        console.log('selectedItem:',{...selectedItem.value});
+        console.log('selectedItem:',selectedItem.value);
+        const result_left = selectedItem_left - container_left;
+        indicator.value.style.left = result_left + "px";
+      });
+    });
     return {
       defaults,
       titleArray,
-      select,
       corrent,
-      navItems,
+      select,
       indicator,
-      container
+      container,
+      selectedItem,
     };
   },
 };
