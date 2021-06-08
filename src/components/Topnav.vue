@@ -1,6 +1,10 @@
 <template>
   <div class="topnav">
-    <router-link to="/" class="logo">LOGO</router-link>
+    <router-link to="/" class="logo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-gulu"></use>
+      </svg>
+    </router-link>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -21,18 +25,23 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$color:#007974;
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
-   position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+  color: $color;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
   > .menu {
     display: flex;
