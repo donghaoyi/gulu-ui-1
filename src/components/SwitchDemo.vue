@@ -4,23 +4,23 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch1Demo1 />
+        <component :is="SwitchDemo1">
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
        <div class="demo-code">
-           <pre> {{Switch1Demo1.__sourceCode}}</pre> 
+           <pre> {{SwitchDemo1.__sourceCode}}</pre> 
        </div>
     </div>
     <div class="demo">
       <h2>支持 disabled</h2>
-      <Switch1Demo2 />
+        <component :is="SwitchDemo2" />
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
        <div class="demo-code">
-           <pre> {{Switch1Demo2.__sourceCode}}</pre> 
+           <pre> {{SwitchDemo2.__sourceCode}}</pre> 
        </div>
     </div>
   </div>
@@ -29,16 +29,13 @@
 import { ref } from "vue";
 import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
-import Switch1Demo1 from './Switch1.demo.vue';
-import Switch1Demo2 from './Switch2.demo.vue';
-console.log(Switch1Demo1);
+import SwitchDemo1 from './Switch1.demo.vue';
+import SwitchDemo2 from './Switch2.demo.vue';
+// console.log(Switch1Demo1);
 
 export default {
   components: {
-    Switch,
     Button,
-    Switch1Demo1,
-    Switch1Demo2
   },
   setup(props) {
     const bool = ref(false);
@@ -46,8 +43,8 @@ export default {
     return {
       bool,
       bool2,
-      Switch1Demo1,
-      Switch1Demo2
+      SwitchDemo1,
+      SwitchDemo2
     };
   },
 };
