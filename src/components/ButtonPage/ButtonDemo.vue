@@ -1,6 +1,11 @@
 <template>
   <div>Button 示例</div>
-  <h1>示例1</h1>
+  <Demo :component="ButtonNormal" />
+  <Demo :component="ButtonSize" />
+  <Demo :component="ButtonDisabled" />
+  <Demo :component="ButtonLoading" />
+
+  <!--<h1>示例1</h1>
   <div>
     <Button>默认</Button>
     <Button theme="button">按钮</Button>
@@ -50,13 +55,29 @@
   <h1>示例5</h1>
   <div>
     <Button loading>加载中</Button>
-  </div>
+  </div> -->
 </template>
 <script lang="ts">
-import Button from "../lib/Button.vue";
+import Demo from "../Demo.vue";
+import ButtonNormal from "./ButtonDemo/ButtonNormal.vue";
+import ButtonLoading from "./ButtonDemo/ButtonLoading.vue";
+import ButtonDisabled from "./ButtonDemo/ButtonDisabled.vue";
+import ButtonSize from "./ButtonDemo/ButtonSize.vue";
 export default {
   components: {
-    Button,
+    Demo,
+    ButtonNormal,
+    ButtonLoading,
+    ButtonDisabled,
+    ButtonSize,
+  },
+  setup(props) {
+    return {
+      ButtonNormal,
+      ButtonLoading,
+      ButtonDisabled,
+      ButtonSize,
+    };
   },
 };
 </script>
