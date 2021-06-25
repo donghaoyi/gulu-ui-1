@@ -3,31 +3,22 @@
     <h1>Switch 组件示例</h1>
     <Demo :component="SwitchDemo1"/>
     <Demo :component="SwitchDemo2"/>
-  </div>
+
+   </div>
 </template>
 <script lang="ts">
 import { ref } from "vue";
-import Switch from "../lib/Switch.vue";
-import Button from "../lib/Button.vue";
 import SwitchDemo1 from './Switch1.demo.vue';
 import SwitchDemo2 from './Switch2.demo.vue';
 import Demo from './Demo.vue'
-import "prismjs"
-import "prismjs/themes/prism-coy.css"
-const Prism = (window as any).Prism
-
 export default {
   components: {
-    Button,
     Demo
   },
   setup(props) {
-    const bool = ref(false);
-    const bool2 = ref(false);
     return {
       SwitchDemo1,
       SwitchDemo2,
-      Prism
     };
   },
 };

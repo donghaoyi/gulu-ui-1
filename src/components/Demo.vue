@@ -37,7 +37,7 @@ export default {
         "html"
       );
     });
-    const codeVisible = ref(true);
+    const codeVisible = ref(false);
     const toggleCode = () => {
       codeVisible.value = !codeVisible.value;
     };
