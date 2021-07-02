@@ -1,6 +1,7 @@
 <template>
     <div>
         <Demo :component="DialogNormal" />
+        <Demo :component="DialogOneCode" />
     </div>
 </template>
 <script lang="">
