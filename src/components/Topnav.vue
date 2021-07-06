@@ -17,7 +17,6 @@
     >
       <use xlink:href="#icon-menu"></use>
     </svg>
-    <!-- </span> -->
   </div>
 </template>
 <script lang="ts">
@@ -47,7 +46,7 @@ $color: #007974;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   color: $color;
   > .logo {
     max-width: 6em;
@@ -69,7 +68,7 @@ $color: #007974;
     display: none;
     width: 32px;
     height: 32px;
-    // background: fade-out($color: #000000, $amount: 0.9);
+    background: fade-out($color: #000000, $amount: 0.9);
     position: absolute;
     transform: translateY(50%);
     left: 16px;
