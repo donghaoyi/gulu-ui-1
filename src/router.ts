@@ -11,7 +11,7 @@ import Markdown from './components/Markdown.vue'
 
 import intro from './markdown/intro.md'
 import install from './markdown/install.md'
-import getStarted from './markdown/getStarted.md'
+import getStarted from './markdown/get-started.md'
 
 const md = string => h(Markdown,{content:string,key:string})
 const history = createWebHashHistory();
