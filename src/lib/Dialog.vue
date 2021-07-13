@@ -1,15 +1,15 @@
 <template>
   <template v-if="visible">
-    <teleport to='body'>
+    <teleport to="body">
       <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
       <div class="gulu-dialog-wrapper">
         <div class="gulu-dialog">
           <header>
-            <slot name="title"/>
+            <slot name="title" />
             <span class="gulu-dialog-close" @click="close"></span>
           </header>
           <main>
-            <slot name="content"/>
+            <slot name="content" />
           </main>
           <footer>
             <Button @click="ok">Ok</Button>
@@ -57,15 +57,15 @@ export default {
       }
     };
     const ok = () => {
-      if (props.ok?.() !== false) {
-        console.log('触发ok事件');
-        
+      if (props.ok && props.ok() !== false) {
         close();
       }
     };
     const cancal = () => {
-      props.cancal?.()
-      console.log('触发cancal事件');
+      if (props.cancal) {
+        props.cancal();
+      }
+      console.log("触发cancal事件");
       close();
     };
     return {
