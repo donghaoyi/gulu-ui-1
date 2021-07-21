@@ -5,8 +5,6 @@
 </template>
 <script lang='ts'>
 export default {
-    setup(props,context) {
-       
-    }
+    name:'GuluTab',
 }
 </script>
