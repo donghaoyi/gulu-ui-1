@@ -43,7 +43,7 @@ export default {
       codeVisible.value = true;
     };
     const hideCode = () => {
-      codeVisible.value = false;
+      codeVisible.value = false; 
     };
     return {
       Prism,
