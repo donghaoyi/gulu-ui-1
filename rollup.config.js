@@ -12,7 +12,7 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Gulu',
+    name: 'HY-UI',
     file: 'dist/lib/gulu.js',
     format: 'umd',
     plugins: [terser()]

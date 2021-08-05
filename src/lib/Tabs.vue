@@ -70,7 +70,7 @@ export default {
         } = selectedItem.value.getBoundingClientRect();
         const result_left = selectedItem_left - container_left;
         indicator.value.style.left = result_left + "px";
-      });
+      },{flush:"post"});
     });
     return {
       defaults,
