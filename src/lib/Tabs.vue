@@ -50,7 +50,7 @@ export default {
         return tag.props.title === props.selected;
       })[0];
     });
-    const select = (title: string) => {
+    const select = (title) => {
       context.emit("update:selected", title);
       console.log(title);
     };
