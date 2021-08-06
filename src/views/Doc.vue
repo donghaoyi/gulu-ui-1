@@ -82,7 +82,7 @@ $aside-index:10;
   }
 }
 aside {
-  background: lightblue;
+  background: #fff;
   width: 150px;
   padding: 16px 0;
   position: fixed;
@@ -90,6 +90,7 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  box-shadow: 5px 0 5px rgb(51 51 51 / 10%);
   z-index: $aside-index;
   > h2 {
     margin-bottom: 4px;
@@ -102,8 +103,13 @@ aside {
         padding: 4px 16px;
         text-decoration: none;
       }
+      > a:hover{
+        border: none;
+        color: #409eff;
+      }
       > .router-link-active {
-        background: white;
+        background: #e6f7ff;
+        color: #035eb9;
       }
     }
   }
